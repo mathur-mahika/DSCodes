@@ -10,16 +10,12 @@ struct Node
 
 struct Node * create_node(int data) {
     
-    // Creating a node pointer
     struct Node *n;  
 
-    //Allocating memory in the heap:
     n = (struct Node *)malloc(sizeof(struct Node));  
 
-    // Setting node data = user input data:
     n->data = data;  
 
-    // Setting the left and right children to NULL:
     n->left = NULL;  
     n->right = NULL;
 
