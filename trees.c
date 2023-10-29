@@ -73,6 +73,22 @@ void printPostorder(struct BTNode *node)
     printf("%d ", node->value);
 }
 
+void searchKey(struct BTNode *node, int key)
+{
+    if(node == NULL)
+    {
+        return;
+    }
+
+    if(node->value == key)
+    {
+        printf("Key found = %d ", node->value);
+    }
+    searchKey(node->left, key);
+
+    searchKey(node->right, key);
+}
+
 int main()
 {
     struct BTNode* root = getNode(1);
@@ -86,13 +102,15 @@ int main()
     printPreorder(root);
     printf("\n");
     printPostorder(root);
+    printf("\n");
+    searchKey(root, 4);
 
     // insert(root, 15);
     // insert(root, 31);
     // insert(root, 17);
-    // insert(root, 12); 
-    // insert(root, 4);
-    // insert(root, 91);
+    // insert(root, 12);
+    // insert(root, 4); 
+    // insert(root, 91); 
 
     return 0;
 }

@@ -73,7 +73,7 @@ struct Node *insert_last(struct Node *head, int data) {
 
 struct Node *delete_first(struct Node *head) {
     if (head == NULL) {
-        printf("List is empty. Cannot delete.\n");
+        printf("List is empty. Cannot delete :(\n");
         return head;
     }
     struct Node *ptr = head;
@@ -215,20 +215,28 @@ int main() {
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
+            {    
                 traverse(head);
                 break;
+            }
             case 2:
+            {    
                 count(head);
                 break;
+            }
             case 3:
+            {
                 printf("Enter data to insert at the beginning: ");
                 scanf("%d", &data);
                 head = insert_first(head, data);
                 traverse(head);
                 break;
+            }
             case 4:
+            {
                 printf("Enter data to insert: ");
                 scanf("%d", &data);
                 printf("Enter index to insert at: ");
@@ -236,50 +244,70 @@ int main() {
                 head = insert_index(head, data, index);
                 traverse(head);
                 break;
+            }
             case 5:
+            {
                 printf("Enter data to insert at the end: ");
                 scanf("%d", &data);
                 head = insert_last(head, data);
                 traverse(head);
                 break;
+            }
             case 6:
+            {
                 head = delete_first(head);
                 traverse(head);
                 break;
+            }
             case 7:
+            {
                 printf("Enter index to delete: ");
                 scanf("%d", &index);
                 head = delete_index(head, index);
                 traverse(head);
                 break;
+            }
             case 8:
+            {
                 head = delete_last(head);
                 traverse(head);
                 break;
+            }
             case 9:
+            {
                 reverse(&head);
                 traverse(head);
                 break;
+            }
             case 10:
+            {
                 printf("Enter key to search for: ");
                 scanf("%d", &key);
                 search(head, key);
                 break;
+            }
             case 11:
+            {
                 sort(head);
                 traverse(head);
                 break;
+            }
             case 12:
+            {
                 struct Node *head2 = NULL;
                 head = concat(head, head2);
                 break;
+            }
             case 0:
+            {
                 printf("Exiting the program.\n");
                 exit(0);
+            }
             default:
+            {
                 printf("Invalid choice. Please enter a valid option.\n");
+            }
         }
     }
-
     return 0;
 }
